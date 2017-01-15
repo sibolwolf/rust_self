@@ -36,6 +36,96 @@ fn main() {
     let sum_middle = &sum[1..4];   //A slice only contain element from 1 to 3
     println!("sum_complete's length is {}", sum_complete.len());
     println!("sum_middle's length is {}", sum_middle.len());
+
+    let (x, y, z) = (1, 2, 3);
+    println!("x is {}", x);
+    let tuple_single = (0,);   //This is a single element tuple 
+    let var_single = (0);   //This is a single variable bindings
+    println!("var_single is {}", var_single);
+
+    let tuple = (1, 2, 3);
+    let x = tuple.0;
+    let y = tuple.1;
+    let z = tuple.2;
+    println!("x is {}", x);
+
+    let x: fn(i32) -> i32 = foo;
+    let y = x(34);
+    println!("y is {}", y);
+
+    // Line comments are anything after '//' and extend to the end of the line.
+    // Put a space between the '//' and the comments so that it is more readable.
+
+    /// Doc comments using /// instead of //, and support makedown notation inside
+    /// Adds one to the number given.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// let five = 5;
+    ///
+    /// assert_eq!(6, add_one(5));
+    /// # fn add_one(x: i32) -> i32 {
+    /// #     x + 1
+    /// # }
+    /// ```
+    fn plus_one(x: i32) -> i32 {
+        x + 1
+    }
+
+    let x = 7;
+    if x == 5 {
+        println!("x is five!");
+    } else if x == 6 {
+        println!("x is six!");
+    } else {
+        println!("x is not five or six");
+    }
+
+    let y = if x == 5 {
+        10
+    } else {
+        15
+    };   // y: i32
+
+    println!("y is {}", y);
+
+    // Or let y = if x == 5 { 10 } else { 15 }; // y: i32
+
+    // Rust provide 3 kinds of iterative activity: loop, while, for.
+
+    let mut x = 5;  // mut x: i32
+    let mut done = false;   // mut done: bool
+
+    while !done {
+        x += x - 3;
+        println!("x iterative value is {}", x);
+
+        if x % 5 == 0 {
+            done = true;
+        }
+    }
+
+    // The 'for' loop is used for a particular number of times
+
+    for x in 0..10 {
+        println!("the 'for' loop for x is {}", x);   // x: i32
+    }
+
+    // The enumerate function used for keeping track how many times of the 'for' loop execute.
+
+    for (index, value) in (5..10).enumerate() {
+        println!("index is {} and value is {}", index, value);
+    }
+
+    let lines_all = "hello\nworld".lines();
+
+    for (linenumber, line) in lines_all.enumerate() {
+        println!("{}, {}", linenumber, line);
+    }
+
+    // Use break or continue to stop the interation
+
 }
 
 fn print_num(x: i32){
@@ -50,3 +140,4 @@ fn add_one(x: i32) -> i32{
     x + 1
 }
 
+fn foo(x: i32) -> i32 { x }
