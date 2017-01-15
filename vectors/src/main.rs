@@ -48,5 +48,4 @@ fn main() {
         println!("Version 3, Taking ownership of the vector and its elemment {}", i);
     }
 
-
 }
