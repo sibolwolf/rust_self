@@ -1,0 +1,6 @@
+[package]
+name = "copy2"
+version = "0.1.0"
+authors = ["sibolwolf <hejinlai@foxmail.com>"]
+
+[dependencies]
